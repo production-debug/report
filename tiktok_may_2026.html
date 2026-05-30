@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TikTok Report — หงษทองแกส — พ.ค. 2569</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700;800&family=IBM+Plex+Mono:wght@400;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:          #f5f6fa;
+  --white:       #ffffff;
+  --surface:     #ffffff;
+  --surface2:    #f0f2f8;
+  --border:      #e2e6f0;
+  --border2:     #c8d0e8;
+
+  /* Navy / blue — header & summary */
+  --navy:        #1a2a5e;
+  --navy2:       #243680;
+  --navy-light:  #e8ecf8;
+  --blue-mid:    #3b5bdb;
+  --blue-soft:   #dde4ff;
+
+  /* Accents */
+  --red:         #e03131;
+  --red-soft:    #fff0f0;
+  --red-border:  #ffc9c9;
+  --green:       #2f9e44;
+  --green-soft:  #ebfbee;
+  --green-border:#b2f2bb;
+  --orange:      #e8590c;
+  --orange-soft: #fff4e6;
+  --orange-border:#ffd8a8;
+  --purple:      #6741d9;
+  --purple-soft: #f3f0ff;
+  --purple-border:#d0bfff;
+  --teal:        #0c8599;
+  --teal-soft:   #e3fafc;
+
+  /* Text */
+  --text:        #1a1f36;
+  --text2:       #4a5175;
+  --text3:       #8892b0;
+  --text-inv:    #ffffff;
+
+  --font-th:      'Sarabun', sans-serif;
+  --font-mono:    'IBM Plex Mono', monospace;
+  --font-display: 'Playfair Display', serif;
+
+  --radius:      10px;
+  --shadow:      0 2px 12px rgba(26,42,94,0.07);
+  --shadow-lg:   0 8px 32px rgba(26,42,94,0.12);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font-th);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+::-webkit-scrollbar { width:6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius:3px; }
+
+/* ─── COVER (navy) ─────────────────────────── */
+.cover {
+  background: linear-gradient(135deg, #1a2a5e 0%, #243680 55%, #1a3a6e 100%);
+  padding: 56px 64px 48px;
+  position: relative; overflow: hidden;
+}
+.cover::before {
+  content:'';
+  position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse at 90% 20%, rgba(255,255,255,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 10% 90%, rgba(59,91,219,0.3) 0%, transparent 50%);
+  pointer-events:none;
+}
+.cover-dots {
+  position:absolute; inset:0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events:none;
+}
+.cover-tag {
+  display:inline-block;
+  font-family:var(--font-mono); font-size:10px; letter-spacing:2px; text-transform:uppercase;
+  color:rgba(255,255,255,0.7); background:rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.2);
+  padding:4px 14px; border-radius:20px; margin-bottom:18px;
+}
+.cover h1 {
+  font-family: var(--font-display);
+  font-size:46px; font-weight:900; color:#fff; line-height:1.1; margin-bottom:10px;
+}
+.cover h1 span { color:#7eb3ff; }
+.cover-sub { font-size:15px; color:rgba(255,255,255,0.7); margin-bottom:28px; }
+.cover-meta { display:flex; gap:28px; flex-wrap:wrap; }
+.cover-meta-item { font-family:var(--font-mono); font-size:10px; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:1px; }
+.cover-meta-item strong { color:rgba(255,255,255,0.85); }
+
+/* ─── LAYOUT ───────────────────────────────── */
+.container { max-width:1080px; margin:0 auto; padding:0 32px 80px; }
+.section { margin-top:56px; }
+.section-label { font-family:var(--font-mono); font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--text3); margin-bottom:6px; }
+.section-title { font-size:21px; font-weight:800; color:var(--navy); margin-bottom:22px; padding-bottom:12px; border-bottom:2px solid var(--border); }
+.section-title span { color:var(--blue-mid); }
+
+/* ─── EXCLUSIVE SUMMARY (navy cards) ────────── */
+.verdict {
+  background: linear-gradient(135deg, #1a2a5e, #2d4090);
+  border-radius: var(--radius);
+  padding:28px 32px;
+  display:flex; gap:28px; align-items:flex-start;
+  margin-bottom:18px;
+  box-shadow: var(--shadow-lg);
+}
+.verdict-score { flex-shrink:0; text-align:center; width:90px; }
+.verdict-score .num {
+  font-family:var(--font-display); font-size:58px; font-weight:900;
+  color:#7eb3ff; line-height:1;
+}
+.verdict-score .lbl { font-family:var(--font-mono); font-size:9px; text-transform:uppercase; letter-spacing:1px; color:rgba(255,255,255,0.4); margin-top:4px; }
+.verdict-body h3 { font-size:16px; font-weight:700; color:#fff; margin-bottom:8px; }
+.verdict-body p { font-size:13px; color:rgba(255,255,255,0.75); line-height:1.75; }
+.verdict-body strong { color:#7eb3ff; }
+.verdict-body em { color:#ffd47e; font-style:normal; }
+
+.summary-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px; }
+.summary-card {
+  background: linear-gradient(135deg, #1e3275, #2a4298);
+  border-radius:var(--radius); padding:22px 24px;
+  border:1px solid rgba(255,255,255,0.1);
+  box-shadow: var(--shadow);
+}
+.summary-card-label { font-family:var(--font-mono); font-size:9px; text-transform:uppercase; letter-spacing:2px; color:rgba(255,255,255,0.4); margin-bottom:8px; }
+.summary-card-title { font-size:14px; font-weight:700; color:#fff; margin-bottom:8px; }
+.summary-card p { font-size:12px; color:rgba(255,255,255,0.65); line-height:1.7; }
+.summary-card strong { color:#a5c8ff; }
+
+.attr-row { background:linear-gradient(135deg,#1a2a5e,#2a4298); border-radius:var(--radius); padding:20px 24px; box-shadow:var(--shadow); }
+.attr-bar { height:30px; border-radius:6px; overflow:hidden; display:flex; margin:10px 0 8px; }
+.attr-int { background:linear-gradient(90deg,#3b7dd8,#5b9af8); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#fff; }
+.attr-ext { background:linear-gradient(90deg,#c92a2a,#e03131); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#fff; }
+.attr-label-row { display:flex; justify-content:space-between; }
+.attr-label { font-size:11px; }
+
+/* ─── KPI CARDS ───────────────────────────── */
+.kpi-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:12px; }
+.kpi-card {
+  background:var(--white); border-radius:var(--radius);
+  padding:18px 20px; border:1px solid var(--border);
+  box-shadow:var(--shadow); position:relative; overflow:hidden;
+  transition: box-shadow .2s, transform .2s;
+}
+.kpi-card:hover { box-shadow:var(--shadow-lg); transform:translateY(-2px); }
+.kpi-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; }
+.kpi-card.g::before { background:linear-gradient(90deg,#2f9e44,#51cf66); }
+.kpi-card.b::before { background:linear-gradient(90deg,#1971c2,#4dabf7); }
+.kpi-card.p::before { background:linear-gradient(90deg,#6741d9,#9775fa); }
+.kpi-card.o::before { background:linear-gradient(90deg,#e8590c,#fd7e14); }
+.kpi-card.r::before { background:linear-gradient(90deg,#c92a2a,#fa5252); }
+.kpi-label { font-size:11px; color:var(--text3); margin-bottom:4px; text-transform:uppercase; letter-spacing:0.5px; }
+.kpi-value { font-size:26px; font-weight:800; color:var(--text); line-height:1; margin-bottom:4px; }
+.kpi-change { font-size:11px; font-weight:700; }
+.up { color:var(--green); } .dn { color:var(--red); }
+.kpi-note { font-size:10px; color:var(--text3); margin-top:2px; }
+
+/* ─── CHART BOXES ─────────────────────────── */
+.chart-row { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:18px; }
+.chart-row-3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:18px; margin-bottom:18px; }
+.chart-box {
+  background:var(--white); border-radius:var(--radius);
+  padding:22px 24px; border:1px solid var(--border); box-shadow:var(--shadow);
+}
+.chart-title { font-size:12px; font-weight:700; color:var(--text2); margin-bottom:18px; text-transform:uppercase; letter-spacing:0.5px; }
+.chart-title span { color:var(--text3); font-weight:400; font-size:11px; text-transform:none; letter-spacing:0; }
+
+/* vertical bars */
+.v-chart { display:flex; gap:10px; align-items:flex-end; }
+.v-bar-wrap { flex:1; display:flex; flex-direction:column; align-items:center; gap:4px; }
+.v-bar { width:100%; border-radius:5px 5px 0 0; }
+.v-bar-val { font-family:var(--font-mono); font-size:9px; color:var(--text2); text-align:center; font-weight:600; }
+.v-bar-lbl { font-size:10px; color:var(--text3); text-align:center; margin-top:5px; }
+
+/* horizontal bars */
+.bar-group { display:flex; flex-direction:column; gap:10px; }
+.bar-row { display:flex; align-items:center; gap:10px; }
+.bar-label { font-size:11px; color:var(--text2); width:110px; flex-shrink:0; text-align:right; }
+.bar-label.wide { width:140px; }
+.bar-track { flex:1; background:var(--surface2); border-radius:4px; height:20px; overflow:hidden; }
+.bar-fill { height:100%; border-radius:4px; display:flex; align-items:center; padding-left:8px; font-size:10px; font-weight:700; color:#fff; white-space:nowrap; }
+.bar-val { font-size:11px; font-weight:700; color:var(--text); width:70px; flex-shrink:0; }
+
+/* traffic */
+.traffic-list { display:flex; flex-direction:column; gap:12px; }
+.traffic-item {}
+.traffic-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:4px; }
+.traffic-name { font-size:12px; color:var(--text2); }
+.traffic-pct { font-family:var(--font-mono); font-size:13px; font-weight:700; }
+.traffic-track { background:var(--surface2); border-radius:3px; height:7px; }
+.traffic-fill { height:100%; border-radius:3px; }
+
+/* funnel */
+.funnel { display:flex; flex-direction:column; gap:8px; align-items:center; }
+.funnel-item { border-radius:6px; padding:12px 18px; text-align:center; width:100%; }
+.funnel-label { font-size:10px; color:var(--text3); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:3px; }
+.funnel-val { font-size:18px; font-weight:800; }
+.funnel-sub { font-size:10px; color:var(--text3); margin-top:2px; }
+
+/* ─── CONTENT TABLE ───────────────────────── */
+.content-table { width:100%; border-collapse:collapse; }
+.content-table th {
+  font-family:var(--font-mono); font-size:10px; text-transform:uppercase;
+  letter-spacing:1px; color:var(--text3); padding:8px 12px;
+  border-bottom:2px solid var(--border); text-align:left; background:var(--surface2);
+}
+.content-table td {
+  font-size:12px; padding:10px 12px; border-bottom:1px solid var(--border);
+  color:var(--text2); vertical-align:middle;
+}
+.content-table tr:hover td { background:#f8f9ff; }
+.content-table tr:last-child td { border-bottom:none; }
+
+.rank-badge { width:22px; height:22px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:10px; font-weight:800; }
+.rank-1 { background:#ffd700; color:#000; }
+.rank-2 { background:#c0c0c0; color:#000; }
+.rank-3 { background:#cd7f32; color:#fff; }
+.rank-n { background:var(--surface2); color:var(--text3); }
+
+.tag { display:inline-block; padding:2px 8px; border-radius:4px; font-size:10px; font-weight:700; white-space:nowrap; }
+.tag-faq    { background:#dde4ff; color:#3b5bdb; }
+.tag-inst   { background:#d3f9d8; color:#2b8a3e; }
+.tag-prod   { background:#f3f0ff; color:#6741d9; }
+.tag-promo  { background:#fff4e6; color:#d9480f; }
+.tag-review { background:#fff0f0; color:#c92a2a; }
+.tag-new    { background:#e3fafc; color:#0c8599; }
+
+.views-hl { color:var(--red); font-weight:700; }
+.up-txt { color:var(--green); font-weight:700; }
+.dn-txt { color:var(--red); font-weight:700; }
+
+/* ─── STAR CONTENT ───────────────────────── */
+.star-card {
+  background: linear-gradient(135deg, #1a2a5e 0%, #1e3a6e 100%);
+  border-radius:var(--radius); padding:26px 28px;
+  box-shadow:var(--shadow-lg);
+}
+.star-title { font-size:14px; font-weight:700; color:#fff; margin-bottom:4px; }
+.star-meta { font-size:11px; color:rgba(255,255,255,0.5); margin-bottom:18px; }
+.star-stats { display:grid; grid-template-columns:repeat(6,1fr); gap:10px; margin-bottom:18px; }
+.star-stat { background:rgba(255,255,255,0.08); border-radius:6px; padding:12px 6px; text-align:center; border:1px solid rgba(255,255,255,0.1); }
+.star-stat-val { font-size:17px; font-weight:800; color:#fff; }
+.star-stat-lbl { font-size:9px; color:rgba(255,255,255,0.45); margin-top:2px; text-transform:uppercase; }
+
+/* ─── INSIGHTS ────────────────────────────── */
+.insight-list { display:flex; flex-direction:column; gap:12px; }
+.insight-item { border-radius:var(--radius); padding:16px 20px; border-left:4px solid; display:flex; gap:14px; box-shadow:var(--shadow); }
+.insight-icon { font-size:18px; flex-shrink:0; margin-top:1px; }
+.insight-content h4 { font-size:13px; font-weight:700; margin-bottom:4px; }
+.insight-content p { font-size:12px; color:var(--text2); line-height:1.7; }
+.insight-content strong { color:var(--text); }
+.ins-green  { background:var(--green-soft);  border-color:var(--green);  } .ins-green h4  { color:var(--green); }
+.ins-blue   { background:#eef3ff;             border-color:var(--blue-mid); } .ins-blue h4   { color:var(--blue-mid); }
+.ins-orange { background:var(--orange-soft); border-color:var(--orange); } .ins-orange h4 { color:var(--orange); }
+.ins-red    { background:var(--red-soft);    border-color:var(--red);    } .ins-red h4    { color:var(--red); }
+.ins-purple { background:var(--purple-soft); border-color:var(--purple); } .ins-purple h4 { color:var(--purple); }
+
+/* ─── CONTEXT BOX ─────────────────────────── */
+.context-box { background:var(--white); border-radius:var(--radius); padding:24px 28px; border:1px solid var(--border); box-shadow:var(--shadow); }
+.hypo { border-radius:8px; padding:14px 18px; margin-bottom:10px; border-left:4px solid; }
+.hypo-strong { background:#fff8f0; border-color:var(--orange); }
+.hypo-weak   { background:var(--surface2); border-color:var(--border2); }
+.hypo-label  { font-family:var(--font-mono); font-size:9px; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:6px; }
+.hypo-strong .hypo-label { color:var(--orange); }
+.hypo-weak   .hypo-label { color:var(--text3); }
+.hypo-text   { font-size:12px; color:var(--text2); line-height:1.7; }
+.hypo-text strong { color:var(--text); }
+
+/* ─── AUDIENCE ───────────────────────────── */
+.age-bars { display:flex; flex-direction:column; gap:8px; margin-top:6px; }
+.age-row { display:flex; align-items:center; gap:8px; }
+.age-lbl { font-size:11px; color:var(--text2); width:55px; flex-shrink:0; }
+.age-track { flex:1; background:var(--surface2); border-radius:3px; height:18px; overflow:hidden; }
+.age-fill { height:100%; border-radius:3px; display:flex; align-items:center; padding-left:7px; font-size:10px; font-weight:700; color:#fff; }
+
+/* ─── SUSTAIN ─────────────────────────────── */
+.sustain-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+.sustain-item { background:var(--white); border:1px solid var(--border); border-radius:var(--radius); padding:16px; text-align:center; box-shadow:var(--shadow); }
+.sustain-icon { font-size:22px; margin-bottom:6px; }
+.sustain-label { font-size:10px; color:var(--text3); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:6px; }
+.sustain-status { font-size:12px; font-weight:700; margin-bottom:4px; }
+.sustain-note { font-size:10px; color:var(--text3); line-height:1.5; }
+.st-ok   { color:var(--green); }
+.st-warn { color:var(--orange); }
+.st-risk { color:var(--red); }
+
+/* ─── SWOT ───────────────────────────────── */
+.swot-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.swot-item { border-radius:var(--radius); padding:20px 22px; border:1px solid; box-shadow:var(--shadow); }
+.swot-s { background:var(--green-soft);  border-color:var(--green-border); }
+.swot-w { background:var(--red-soft);    border-color:var(--red-border); }
+.swot-o { background:#eef3ff;            border-color:#bac8ff; }
+.swot-t { background:var(--orange-soft); border-color:var(--orange-border); }
+.swot-title { font-size:13px; font-weight:800; margin-bottom:10px; }
+.swot-s .swot-title { color:var(--green); }
+.swot-w .swot-title { color:var(--red); }
+.swot-o .swot-title { color:var(--blue-mid); }
+.swot-t .swot-title { color:var(--orange); }
+.swot-list { list-style:none; display:flex; flex-direction:column; gap:5px; }
+.swot-list li { font-size:12px; color:var(--text2); padding-left:14px; position:relative; }
+.swot-list li::before { content:'—'; position:absolute; left:0; color:var(--text3); }
+
+/* ─── RECOMMENDATIONS ────────────────────── */
+.rec-phase { font-family:var(--font-mono); font-size:10px; text-transform:uppercase; letter-spacing:1.5px; color:var(--text3); margin:22px 0 10px; }
+.rec-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.rec-item { background:var(--white); border:1px solid var(--border); border-radius:var(--radius); padding:16px 18px; display:flex; gap:14px; box-shadow:var(--shadow); }
+.rec-num { width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; flex-shrink:0; margin-top:1px; }
+.rec-now  .rec-num { background:var(--green);    color:#fff; }
+.rec-mid  .rec-num { background:var(--orange);   color:#fff; }
+.rec-long .rec-num { background:var(--purple);   color:#fff; }
+.rec-content h4 { font-size:13px; font-weight:700; color:var(--text); margin-bottom:4px; }
+.rec-content p  { font-size:11px; color:var(--text2); line-height:1.6; }
+
+/* ─── CHIPS ──────────────────────────────── */
+.chips { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
+.chip { padding:3px 10px; border-radius:20px; font-size:10px; font-family:var(--font-mono); border:1px solid; }
+.chip-red   { background:var(--red-soft);    border-color:var(--red-border);    color:var(--red); }
+.chip-blue  { background:#eef3ff;            border-color:#bac8ff;              color:var(--blue-mid); }
+.chip-green { background:var(--green-soft);  border-color:var(--green-border);  color:var(--green); }
+.chip-gray  { background:var(--surface2);    border-color:var(--border2);       color:var(--text3); }
+
+/* ─── MISC ───────────────────────────────── */
+.note { font-size:10px; color:var(--text3); margin-top:8px; font-style:italic; }
+.divider { height:1px; background:var(--border); margin:40px 0; }
+
+/* ─── FOOTER ─────────────────────────────── */
+.footer {
+  margin-top:60px; padding:20px 0;
+  border-top:1px solid var(--border);
+  display:flex; justify-content:space-between; align-items:center;
+  font-family:var(--font-mono); font-size:10px; color:var(--text3);
+  text-transform:uppercase; letter-spacing:1px;
+}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-dots"></div>
+  <div class="cover-tag">TikTok Performance Report · 2026_05_28d</div>
+  <h1>หงษทองแกส<br><span>พ.ค. 2569</span></h1>
+  <p class="cover-sub">@hongtonggas_official &nbsp;·&nbsp; 26 เม.ย. – 25 พ.ค. 2569 &nbsp;·&nbsp; 28 วัน</p>
+  <div class="cover-meta">
+    <div class="cover-meta-item">จัดทำ <strong>30/05/2569</strong></div>
+    <div class="cover-meta-item">แหล่งข้อมูล <strong>TikTok Analytics</strong></div>
+    <div class="cover-meta-item">ไฟล์ <strong>Overview + Content + Ranking</strong></div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ══════ S01 EXCLUSIVE SUMMARY ══════ -->
+<div class="section">
+  <div class="section-label">Section 01</div>
+  <div class="section-title">Exclusive <span>Summary</span></div>
+
+  <!-- Verdict (navy) -->
+  <div class="verdict">
+    <div class="verdict-score">
+      <div class="num">B+</div>
+      <div class="lbl">Overall<br>Grade</div>
+    </div>
+    <div class="verdict-body">
+      <h3>พ.ค. 2569 — เดือนที่ดีที่สุดในรอบ 5 เดือน แต่ต้องอ่านตัวเลขอย่างระมัดระวัง</h3>
+      <p>Views พุ่ง <strong>+59.6%</strong> และ Followers แตะ <strong>22,042 คน</strong> — ตัวเลขเหล่านี้น่าประทับใจ แต่ส่วนสำคัญมาจาก <em>กระแส Land Cruiser FJ ภายนอก</em> ที่กำลังร้อนแรงในตลาด ไม่ใช่ Brand Pull ของช่องเพียงอย่างเดียว สัดส่วนที่ประเมินคือ <strong>~60% Tailwind</strong> จากตลาด / <strong>~40% Content Strategy</strong> ของช่อง ซึ่งก็ยังถือว่าดี เพราะช่องสามารถ "คว้าโอกาส" จากกระแสได้อย่างมีประสิทธิภาพ</p>
+    </div>
+  </div>
+
+  <!-- 4 summary cards (navy) -->
+  <div class="summary-grid">
+    <div class="summary-card">
+      <div class="summary-card-label">🌍 ปัจจัยภายนอก (External Tailwind)</div>
+      <div class="summary-card-title">กระแส FJ + ราคาน้ำมันหนุน</div>
+      <p>Toyota Land Cruiser FJ เพิ่งเปิดตัว ทำให้ Search Volume พุ่ง — ช่องนี้อยู่ใน Position ที่ใช่และถ่ายทอดออกมาได้ดี แต่ <strong>กระแสนี้จะจางลงใน 6–12 เดือน</strong></p>
+    </div>
+    <div class="summary-card">
+      <div class="summary-card-label">💪 ความสามารถภายใน (Content Strategy)</div>
+      <div class="summary-card-title">Series + Timing + FAQ Format</div>
+      <p>ปล่อย 4 คลิปใน 30 ชั่วโมง สร้าง Algorithm Momentum + โพสต์ช่วง 18–19 น. + สูตร "ตัวเลข+เดินทางจริง" ซึ่ง <strong>ทำซ้ำกับรถรุ่นอื่นได้ทันที</strong></p>
+    </div>
+    <div class="summary-card">
+      <div class="summary-card-label">⚠️ ความเสี่ยงที่ต้องระวัง</div>
+      <div class="summary-card-title">8/10 Top Content คือ FJ</div>
+      <p>Concentration Risk สูง ถ้า FJ Interest ลด ตัวเลขจะกระทบหนัก + Follow Conversion เพียง <strong>~1.5%</strong> แม้ Non-Followers 82–94% ดูอยู่</p>
+    </div>
+    <div class="summary-card">
+      <div class="summary-card-label">🚀 สิ่งที่ต้องทำต่อไป</div>
+      <div class="summary-card-title">Diversify + CTA + Evergreen</div>
+      <p>นำสูตร FAQ ไปทำกับรถรุ่นอื่น + ใส่ CTA ในทุกคลิป + รักษา Evergreen Content ที่คลิปเก่าปี 2566 <strong>ยังติด Top 10 อยู่เลย</strong></p>
+    </div>
+  </div>
+
+  <!-- Attribution bar (navy) -->
+  <div class="attr-row">
+    <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,0.8);margin-bottom:2px;">Attribution — ยอด Views มาจากอะไร? <span style="font-weight:400;color:rgba(255,255,255,0.45);font-size:11px;">(ประมาณการ)</span></div>
+    <div class="attr-bar">
+      <div class="attr-int" style="width:40%;">Content Strategy ~40%</div>
+      <div class="attr-ext" style="width:60%;">External Tailwind (FJ กระแส) ~60%</div>
+    </div>
+    <div class="attr-label-row">
+      <div class="attr-label" style="color:#7eb3ff;font-size:11px;">■ Internal: Series Format, Timing, FAQ Quality, Brand Trust</div>
+      <div class="attr-label" style="color:#ffa8a8;font-size:11px;">■ External: FJ Launch Hype, Oil Price, Search Demand</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ S02 KPI OVERVIEW ══════ -->
+<div class="section">
+  <div class="section-label">Section 02</div>
+  <div class="section-title">KPI <span>ภาพรวม</span> — เปรียบเทียบ พ.ค. vs เม.ย. 2569</div>
+
+  <div class="kpi-grid">
+    <div class="kpi-card g"><div class="kpi-label">👁 Video Views</div><div class="kpi-value">342,200</div><div class="kpi-change up">▲ +59.6% vs เม.ย.</div></div>
+    <div class="kpi-card b"><div class="kpi-label">👥 Unique Viewers</div><div class="kpi-value">125,600</div><div class="kpi-change up">▲ +56.7%</div></div>
+    <div class="kpi-card p"><div class="kpi-label">✨ New Followers</div><div class="kpi-value">1,200</div><div class="kpi-change up">▲ +45.3%</div></div>
+    <div class="kpi-card o"><div class="kpi-label">❤️ Likes</div><div class="kpi-value">8,300</div><div class="kpi-change up">▲ +79.5%</div></div>
+  </div>
+  <div class="kpi-grid">
+    <div class="kpi-card g"><div class="kpi-label">🆕 New Viewers</div><div class="kpi-value">78,000</div><div class="kpi-change up">▲ +38.5%</div><div class="kpi-note">62.1% ของ Viewers ทั้งหมด</div></div>
+    <div class="kpi-card b"><div class="kpi-label">🔍 Profile Views</div><div class="kpi-value">10,400</div><div class="kpi-change up">▲ +171.3%</div><div class="kpi-note">สัญญาณ Brand Interest</div></div>
+    <div class="kpi-card p"><div class="kpi-label">💬 Comments</div><div class="kpi-value">207</div><div class="kpi-change up">▲ +33.5%</div></div>
+    <div class="kpi-card r"><div class="kpi-label">🔁 Shares</div><div class="kpi-value">787</div><div class="kpi-change dn">▼ -13.7%</div><div class="kpi-note">จุดเดียวที่ลดลง</div></div>
+  </div>
+</div>
+
+<!-- ══════ S03 EXTERNAL CONTEXT ══════ -->
+<div class="section">
+  <div class="section-label">Section 03</div>
+  <div class="section-title">External <span>Context</span> — ปัจจัยภายนอกที่อาจส่งผล</div>
+
+  <div class="context-box">
+    <p style="font-size:13px;color:var(--text2);margin-bottom:14px;">ก่อนตีความตัวเลข ตั้งสมมติฐานไว้ 2 ระดับ — <strong style="color:var(--orange);">น้ำหนักสูง</strong> (มีหลักฐานในข้อมูล) และ <strong style="color:var(--text3);">น้ำหนักต่ำ</strong> (ยังไม่ยืนยัน)</p>
+
+    <div class="hypo hypo-strong">
+      <div class="hypo-label">สมมติฐานน้ำหนักสูง ① — Toyota Land Cruiser FJ Reborn</div>
+      <div class="hypo-text">รถรุ่นนี้เพิ่งกลับมาในตลาด ทำให้ Search Volume สูงมาก — สะท้อนผ่าน Top Keywords <strong>"land cruiser fj ติดแก๊ส"</strong> และ <strong>"toyota land cruiser fj ติดแก๊ส"</strong> ที่ปรากฏเป็น Keyword หลักข้ามทุกคลิป FJ + Non-Followers 88–94% แปลว่าคนค้นหา "FJ" ในตลาดก่อนแล้วเจอช่องนี้ ไม่ใช่แฟนช่องที่ตามดู</div>
+    </div>
+
+    <div class="hypo hypo-strong">
+      <div class="hypo-label">สมมติฐานน้ำหนักสูง ② — ราคาน้ำมัน / ต้นทุนพลังงาน</div>
+      <div class="hypo-text">Keywords เช่น <strong>"ติดแก๊สดีเซลกี่บาท"</strong> และ <strong>"ติดแก๊ส LPG ราคาเท่าไหร่"</strong> ปรากฏข้ามหลายคลิป บ่งชี้ว่า Search Intent เรื่องประหยัดค่าเชื้อเพลิงยังสูงต่อเนื่อง เป็น Background Demand ที่เอื้อให้ Content LPG ทำได้ดีขึ้นอยู่แล้ว</div>
+    </div>
+
+    <div class="hypo hypo-weak">
+      <div class="hypo-label">สมมติฐานน้ำหนักต่ำ — Creator / Media อื่นจุดกระแส FJ ก่อน</div>
+      <div class="hypo-text">อาจมี YouTube Reviews หรือ TikTok Creator อื่นทำคลิป FJ ก่อนหน้า ทำให้ Algorithm มี FJ Content Pool กว้างขึ้น แต่ไม่มีข้อมูลในไฟล์ยืนยัน — ตั้งไว้เป็นข้อสังเกต</div>
+    </div>
+
+    <div style="margin-top:12px;padding:12px 16px;background:var(--navy-light);border-radius:6px;border-left:3px solid var(--blue-mid);">
+      <p style="font-size:12px;color:var(--text2);">💡 <strong>นัยต่อการใช้ตัวเลข:</strong> Views/Viewers พ.ค. 69 ไม่ควรนำไปฉายภาพอนาคตแบบเส้นตรง ตัวเลขที่ "Owned" โดยช่องจริงๆ คือ Followers Growth, Profile Views, และ Returning Viewers</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ S04 MONTHLY TREND ══════ -->
+<div class="section">
+  <div class="section-label">Section 04</div>
+  <div class="section-title">Monthly <span>Trend</span> — ม.ค. ถึง พ.ค. 2569</div>
+
+  <div class="chart-row">
+    <div class="chart-box">
+      <div class="chart-title">Video Views รวมต่อเดือน <span>(28 วัน)</span></div>
+      <div class="v-chart" style="height:140px;align-items:flex-end;padding-bottom:28px;">
+        <div class="v-bar-wrap"><div class="v-bar-val">56K</div><div class="v-bar" style="height:16%;background:#bac8ff;"></div><div class="v-bar-lbl">ม.ค.</div></div>
+        <div class="v-bar-wrap"><div class="v-bar-val">57K</div><div class="v-bar" style="height:17%;background:#bac8ff;"></div><div class="v-bar-lbl">ก.พ.</div></div>
+        <div class="v-bar-wrap"><div class="v-bar-val">70K</div><div class="v-bar" style="height:20%;background:#91a7ff;"></div><div class="v-bar-lbl">มี.ค.</div></div>
+        <div class="v-bar-wrap"><div class="v-bar-val" style="color:var(--blue-mid);">234K</div><div class="v-bar" style="height:68%;background:linear-gradient(180deg,var(--blue-mid),#748ffc);"></div><div class="v-bar-lbl">เม.ย.</div></div>
+        <div class="v-bar-wrap"><div class="v-bar-val" style="color:var(--red);font-weight:800;">342K ★</div><div class="v-bar" style="height:100%;background:linear-gradient(180deg,var(--red),#ff6b6b);"></div><div class="v-bar-lbl" style="color:var(--red);font-weight:700;">พ.ค.</div></div>
+      </div>
+    </div>
+    <div class="chart-box">
+      <div class="chart-title">New Followers ต่อเดือน</div>
+      <div class="v-chart" style="height:140px;align-items:flex-end;padding-bottom:28px;">
+        <div class="v-bar-wrap"><div class="v-bar-val" style="font-size:8px;">108</div><div class="v-bar" style="height:9%;background:#d0bfff;"></div><div class="v-bar-lbl">ม.ค.</div></div>
+        <div class="v-bar-wrap"><div class="v-bar-val" style="font-size:8px;">82</div><div class="v-bar" style="height:7%;background:#d0bfff;"></div><div class="v-bar-lbl">ก.พ.</div></div>
+        <div class="v-bar-wrap"><div class="v-bar-val" style="font-size:8px;">187</div><div class="v-bar" style="height:16%;background:#b197fc;"></div><div class="v-bar-lbl">มี.ค.</div></div>
+        <div class="v-bar-wrap"><div class="v-bar-val" style="font-size:8px;color:var(--purple);">932</div><div class="v-bar" style="height:78%;background:linear-gradient(180deg,var(--purple),#9775fa);"></div><div class="v-bar-lbl">เม.ย.</div></div>
+        <div class="v-bar-wrap"><div class="v-bar-val" style="font-size:8px;color:var(--red);font-weight:800;">1,200★</div><div class="v-bar" style="height:100%;background:linear-gradient(180deg,var(--red),var(--purple));"></div><div class="v-bar-lbl" style="color:var(--red);">พ.ค.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ S05 TOP CONTENT ══════ -->
+<div class="section">
+  <div class="section-label">Section 05</div>
+  <div class="section-title">Top Content <span>Rankings</span> — 28 วัน</div>
+
+  <div class="chart-box" style="margin-bottom:18px;">
+    <div class="chart-title">Top 10 by Views (28 วัน)</div>
+    <table class="content-table">
+      <thead><tr><th>#</th><th>หัวข้อ</th><th>ประเภท</th><th>Views</th><th>Likes</th><th>CR%</th><th>New Flw</th></tr></thead>
+      <tbody>
+        <tr><td><span class="rank-badge rank-1">1</span></td><td>FJ กินกี่บาท/กม.? สามพราน–ศรีราชา</td><td><span class="tag tag-faq">FAQ</span></td><td class="views-hl">84,000</td><td>1,898</td><td>6.8%</td><td class="up-txt">340</td></tr>
+        <tr><td><span class="rank-badge rank-2">2</span></td><td>ติดแก๊ส FJ เสร็จสิ้น! 22:02น.</td><td><span class="tag tag-inst">ผลงาน</span></td><td class="views-hl">36,000</td><td>987</td><td>7.8%</td><td>175</td></tr>
+        <tr><td><span class="rank-badge rank-3">3</span></td><td>FJ ติดแก๊ส Prins ดีไหม? Silverline</td><td><span class="tag tag-prod">Product</span></td><td class="views-hl">33,000</td><td>696</td><td>6.4%</td><td>137</td></tr>
+        <tr><td><span class="rank-badge rank-n">4</span></td><td>FJ ประสบการณ์ 17 ปี เครื่อง 2TRFE</td><td><span class="tag tag-faq">FAQ</span></td><td>19,000</td><td>451</td><td>4.9%</td><td>97</td></tr>
+        <tr><td><span class="rank-badge rank-n">5</span></td><td>สายลุยเตรียมตัว FJ ติดแก๊ส <span style="color:var(--text3);">(เม.ย.)</span></td><td><span class="tag tag-new">New Model</span></td><td>18,000</td><td>1,590</td><td>3.0%</td><td>117</td></tr>
+        <tr><td><span class="rank-badge rank-n">6</span></td><td>รวมไฟแนนซ์ที่โตโยตา พาราวินเซอร์</td><td><span class="tag tag-promo">Promo</span></td><td>12,000</td><td>364</td><td>8.3%</td><td>24</td></tr>
+        <tr><td><span class="rank-badge rank-n">7</span></td><td>ลองขับหลังติดตั้ง ฟีลลิ่งเป็นไง?</td><td><span class="tag tag-inst">ผลงาน</span></td><td>9,055</td><td>250</td><td>5.3%</td><td>22</td></tr>
+        <tr><td><span class="rank-badge rank-n">8</span></td><td>รวมโปร PT ส่วนลด 14,000 บาท</td><td><span class="tag tag-promo">Promo</span></td><td>8,564</td><td>216</td><td><span class="dn-txt">1.2%</span></td><td>18</td></tr>
+        <tr><td><span class="rank-badge rank-n">9</span></td><td>Raptor รีวิว Prins VSI-3 DI <span style="color:var(--text3);">(เม.ย.)</span></td><td><span class="tag tag-review">Review</span></td><td>6,700</td><td>406</td><td>3.7%</td><td>49</td></tr>
+        <tr><td><span class="rank-badge rank-n">10</span></td><td>ถังโดนัทใต้ท้อง ตรวจ 10 ปี <span style="color:var(--text3);">(2566)</span></td><td><span class="tag tag-faq">FAQ</span></td><td>6,300</td><td>2,279</td><td>2.0%</td><td>574</td></tr>
+      </tbody>
+    </table>
+    <p class="note">* คลิปจากเดือนก่อน/ปีก่อน ยังติด Ranking 28 วัน ของ พ.ค. — สัญญาณ Evergreen Value</p>
+  </div>
+
+  <!-- Star Content (navy) -->
+  <div class="star-card">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+      <span style="font-size:18px;">⭐</span>
+      <div class="star-title">"Land Cruiser FJ ติดแก๊ส Prins จะกินกี่บาท/กม.? สามพราน–ศรีราชา"</div>
+    </div>
+    <div class="star-meta">tt_20260528_007 · 13/05/2569 18:53 น. · 2:53 นาที · Education/FAQ</div>
+    <div class="star-stats">
+      <div class="star-stat"><div class="star-stat-val" style="color:#ff8fa3;">84,000</div><div class="star-stat-lbl">Total Views</div></div>
+      <div class="star-stat"><div class="star-stat-val" style="color:#ffd47e;">1,898</div><div class="star-stat-lbl">Likes</div></div>
+      <div class="star-stat"><div class="star-stat-val" style="color:#8ce99a;">223</div><div class="star-stat-lbl">Shares</div></div>
+      <div class="star-stat"><div class="star-stat-val" style="color:#a5c8ff;">38,000</div><div class="star-stat-lbl">New Viewers</div></div>
+      <div class="star-stat"><div class="star-stat-val" style="color:#d0bfff;">340</div><div class="star-stat-lbl">New Followers</div></div>
+      <div class="star-stat"><div class="star-stat-val" style="color:#ffa94d;">94%</div><div class="star-stat-lbl">Non-Followers</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+      <div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">Traffic Sources</div>
+        <div class="traffic-list">
+          <div class="traffic-item">
+            <div class="traffic-header"><span class="traffic-name" style="color:rgba(255,255,255,0.7);">For You Page</span><span class="traffic-pct" style="color:#ff8fa3;">90.4%</span></div>
+            <div class="traffic-track" style="background:rgba(255,255,255,0.1);"><div class="traffic-fill" style="width:90.4%;background:#ff6b6b;"></div></div>
+          </div>
+          <div class="traffic-item">
+            <div class="traffic-header"><span class="traffic-name" style="color:rgba(255,255,255,0.7);">Search</span><span class="traffic-pct" style="color:#a5c8ff;">5.7%</span></div>
+            <div class="traffic-track" style="background:rgba(255,255,255,0.1);"><div class="traffic-fill" style="width:5.7%;background:#748ffc;"></div></div>
+          </div>
+          <div class="traffic-item">
+            <div class="traffic-header"><span class="traffic-name" style="color:rgba(255,255,255,0.7);">Profile</span><span class="traffic-pct" style="color:#d0bfff;">3.5%</span></div>
+            <div class="traffic-track" style="background:rgba(255,255,255,0.1);"><div class="traffic-fill" style="width:3.5%;background:#9775fa;"></div></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">Top Search Keywords</div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;">
+          <span style="padding:3px 10px;background:rgba(255,107,107,0.2);border:1px solid rgba(255,107,107,0.4);border-radius:20px;font-size:10px;color:#ff8fa3;font-family:var(--font-mono);">land cruiser fj ติดแก๊ส 7.4%</span>
+          <span style="padding:3px 10px;background:rgba(165,200,255,0.2);border:1px solid rgba(165,200,255,0.3);border-radius:20px;font-size:10px;color:#a5c8ff;font-family:var(--font-mono);">หงษ์ทองแก๊ส 5.4%</span>
+          <span style="padding:3px 10px;background:rgba(165,200,255,0.15);border:1px solid rgba(165,200,255,0.25);border-radius:20px;font-size:10px;color:#a5c8ff;font-family:var(--font-mono);">toyota land cruiser fj 5.3%</span>
+          <span style="padding:3px 10px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);border-radius:20px;font-size:10px;color:rgba(255,255,255,0.5);font-family:var(--font-mono);">ติดแก๊สดีเซลกี่บาท 4.4%</span>
+        </div>
+        <div style="margin-top:12px;padding:10px 14px;background:rgba(255,107,107,0.1);border-radius:6px;border-left:2px solid rgba(255,107,107,0.5);">
+          <p style="font-size:11px;color:rgba(255,255,255,0.6);">🔍 Keywords หลักคือ "FJ" ไม่ใช่ "หงษ์ทอง" — คนค้นหาตัวรถก่อนแล้วเจอช่องนี้ = External Demand มีผล</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ S06 TRAFFIC SOURCES ══════ -->
+<div class="section">
+  <div class="section-label">Section 06</div>
+  <div class="section-title">Traffic <span>Sources</span> — การเปลี่ยนแปลงสำคัญ</div>
+  <div class="chart-row">
+    <div class="chart-box">
+      <div class="chart-title">เม.ย. vs พ.ค. 2569</div>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span style="font-size:12px;color:var(--text2);">For You Page (FYP)</span><span style="font-size:11px;color:var(--red);font-weight:700;">▲ +16.6pp</span></div>
+          <div style="display:flex;gap:6px;align-items:center;margin-bottom:3px;"><span style="font-size:10px;color:var(--text3);width:32px;">เม.ย.</span><div style="flex:1;background:var(--surface2);border-radius:3px;height:12px;"><div style="height:100%;width:31%;background:#bac8ff;border-radius:3px;"></div></div><span style="font-size:10px;color:var(--text3);width:35px;text-align:right;">31.0%</span></div>
+          <div style="display:flex;gap:6px;align-items:center;"><span style="font-size:10px;color:var(--red);font-weight:600;width:32px;">พ.ค.</span><div style="flex:1;background:var(--surface2);border-radius:3px;height:12px;"><div style="height:100%;width:47.6%;background:linear-gradient(90deg,var(--red),#ff6b6b);border-radius:3px;"></div></div><span style="font-size:10px;color:var(--red);font-weight:700;width:35px;text-align:right;">47.6%</span></div>
+        </div>
+        <div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span style="font-size:12px;color:var(--text2);">Search</span><span style="font-size:11px;color:var(--text3);">▼ -16.4pp (สัดส่วน)</span></div>
+          <div style="display:flex;gap:6px;align-items:center;margin-bottom:3px;"><span style="font-size:10px;color:var(--text3);width:32px;">เม.ย.</span><div style="flex:1;background:var(--surface2);border-radius:3px;height:12px;"><div style="height:100%;width:52.1%;background:#bac8ff;border-radius:3px;"></div></div><span style="font-size:10px;color:var(--text3);width:35px;text-align:right;">52.1%</span></div>
+          <div style="display:flex;gap:6px;align-items:center;"><span style="font-size:10px;color:var(--blue-mid);font-weight:600;width:32px;">พ.ค.</span><div style="flex:1;background:var(--surface2);border-radius:3px;height:12px;"><div style="height:100%;width:35.7%;background:linear-gradient(90deg,var(--blue-mid),#748ffc);border-radius:3px;"></div></div><span style="font-size:10px;color:var(--blue-mid);font-weight:700;width:35px;text-align:right;">35.7%</span></div>
+        </div>
+        <div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span style="font-size:12px;color:var(--text2);">Profile</span><span style="font-size:11px;color:var(--text3);">≈ คงที่</span></div>
+          <div style="display:flex;gap:6px;align-items:center;margin-bottom:3px;"><span style="font-size:10px;color:var(--text3);width:32px;">เม.ย.</span><div style="flex:1;background:var(--surface2);border-radius:3px;height:12px;"><div style="height:100%;width:16.5%;background:#d0bfff;border-radius:3px;"></div></div><span style="font-size:10px;color:var(--text3);width:35px;text-align:right;">16.5%</span></div>
+          <div style="display:flex;gap:6px;align-items:center;"><span style="font-size:10px;color:var(--purple);font-weight:600;width:32px;">พ.ค.</span><div style="flex:1;background:var(--surface2);border-radius:3px;height:12px;"><div style="height:100%;width:16.4%;background:var(--purple);border-radius:3px;"></div></div><span style="font-size:10px;color:var(--purple);font-weight:700;width:35px;text-align:right;">16.4%</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="chart-box">
+      <div class="chart-title">New vs Returning Viewers</div>
+      <div style="display:flex;gap:12px;margin-bottom:16px;">
+        <div style="flex:1;background:var(--green-soft);border:1px solid var(--green-border);border-radius:8px;padding:16px;text-align:center;">
+          <div style="font-size:30px;font-weight:800;color:var(--green);">62.1%</div>
+          <div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:0.5px;">🆕 New Viewers</div>
+          <div style="font-size:12px;color:var(--text2);margin-top:3px;">78,000 คน</div>
+        </div>
+        <div style="flex:1;background:#eef3ff;border:1px solid #bac8ff;border-radius:8px;padding:16px;text-align:center;">
+          <div style="font-size:30px;font-weight:800;color:var(--blue-mid);">37.9%</div>
+          <div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:0.5px;">🔄 Returning</div>
+          <div style="font-size:12px;color:var(--text2);margin-top:3px;">47,600 คน</div>
+        </div>
+      </div>
+      <div style="background:var(--navy-light);border-radius:6px;padding:12px 14px;font-size:12px;color:var(--text2);border-left:3px solid var(--blue-mid);">
+        Returning Viewers เพิ่มขึ้นมากจาก เม.ย. แสดงว่า FJ Series สร้าง <strong>Loyal Audience</strong> ได้จริง ไม่ใช่แค่ฝูงชนชั่วคราว
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ S07 AUDIENCE PROFILE ══════ -->
+<div class="section">
+  <div class="section-label">Section 07</div>
+  <div class="section-title">Audience <span>Profile</span></div>
+  <div class="chart-row">
+    <div class="chart-box">
+      <div class="chart-title">ช่วงอายุ Viewers — พ.ค. 2569</div>
+      <div class="age-bars">
+        <div class="age-row"><div class="age-lbl">18–24</div><div class="age-track"><div class="age-fill" style="width:5.2%;background:#bac8ff;">5.2%</div></div></div>
+        <div class="age-row"><div class="age-lbl" style="color:var(--navy);font-weight:700;">25–34 ★</div><div class="age-track"><div class="age-fill" style="width:26.2%;background:linear-gradient(90deg,var(--navy2),var(--blue-mid));">26.2%</div></div></div>
+        <div class="age-row"><div class="age-lbl" style="color:var(--navy);font-weight:700;">35–44 ★</div><div class="age-track"><div class="age-fill" style="width:29.4%;background:linear-gradient(90deg,var(--navy2),var(--blue-mid));">29.4%</div></div></div>
+        <div class="age-row"><div class="age-lbl" style="color:var(--orange);font-weight:700;">45–54 ★</div><div class="age-track"><div class="age-fill" style="width:25.2%;background:linear-gradient(90deg,var(--orange),#fd7e14);">25.2%</div></div></div>
+        <div class="age-row"><div class="age-lbl">55+</div><div class="age-track"><div class="age-fill" style="width:14%;background:#b197fc;">14.0%</div></div></div>
+      </div>
+      <div style="margin-top:12px;padding:8px 12px;background:#eef3ff;border-radius:5px;font-size:11px;color:var(--text2);border-left:3px solid var(--blue-mid);">
+        กลุ่ม 25–54 ปี รวมกัน <strong style="color:var(--navy);">80.8%</strong> — ตรง Target ลูกค้ามีกำลังซื้อ
+      </div>
+    </div>
+    <div class="chart-box">
+      <div class="chart-title">เพศ & Follow Conversion Gap</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;">
+        <div style="text-align:center;background:#eef3ff;padding:14px;border-radius:8px;border:1px solid #bac8ff;">
+          <div style="font-size:26px;font-weight:800;color:var(--blue-mid);">82%</div>
+          <div style="font-size:10px;color:var(--text3);">ชาย (Viewers)</div>
+        </div>
+        <div style="text-align:center;background:#fff0f6;padding:14px;border-radius:8px;border:1px solid #fcc2d7;">
+          <div style="font-size:26px;font-weight:800;color:#c2255c;">18%</div>
+          <div style="font-size:10px;color:var(--text3);">หญิง (Viewers)</div>
+        </div>
+      </div>
+      <div style="background:var(--orange-soft);border:1px solid var(--orange-border);border-radius:8px;padding:16px;">
+        <div style="font-size:12px;font-weight:700;color:var(--orange);margin-bottom:6px;">⚠️ Follow Conversion Gap</div>
+        <div style="font-size:24px;font-weight:800;color:var(--text);">~1.5%</div>
+        <div style="font-size:11px;color:var(--text2);margin-top:4px;">ของผู้ชม 125,600 คน กด Follow จริงๆ<br>Non-Followers <strong>82–94%</strong> ยังดูโดยไม่ Follow</div>
+        <div style="margin-top:8px;font-size:11px;color:var(--orange);font-weight:600;">→ CTA ในคลิปยังอ่อนมาก โอกาสเพิ่ม Follower 2x ทันที</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ S08 CONTENT CATEGORY ══════ -->
+<div class="section">
+  <div class="section-label">Section 08</div>
+  <div class="section-title">Content Category <span>Analysis</span></div>
+  <div class="chart-row">
+    <div class="chart-box">
+      <div class="chart-title">Views รวมแยกตามประเภท Content</div>
+      <div class="bar-group">
+        <div class="bar-row"><div class="bar-label wide">Education / FAQ</div><div class="bar-track"><div class="bar-fill" style="width:92%;background:linear-gradient(90deg,var(--blue-mid),#748ffc);">108,300</div></div></div>
+        <div class="bar-row"><div class="bar-label wide">Installation Showcase</div><div class="bar-track"><div class="bar-fill" style="width:42%;background:linear-gradient(90deg,var(--green),#51cf66);">45,000</div></div></div>
+        <div class="bar-row"><div class="bar-label wide">Product Feature</div><div class="bar-track"><div class="bar-fill" style="width:36%;background:linear-gradient(90deg,var(--purple),#9775fa);">38,300</div></div></div>
+        <div class="bar-row"><div class="bar-label wide">Promotion</div><div class="bar-track"><div class="bar-fill" style="width:23%;background:linear-gradient(90deg,var(--orange),#fd7e14);">24,800</div></div></div>
+        <div class="bar-row"><div class="bar-label wide">Trend / New Model</div><div class="bar-track"><div class="bar-fill" style="width:10%;background:#91a7ff;">10,900</div></div></div>
+      </div>
+    </div>
+    <div class="chart-box">
+      <div class="chart-title">Funnel Stage Distribution</div>
+      <div class="funnel">
+        <div class="funnel-item" style="background:#eef3ff;border:1px solid #bac8ff;">
+          <div class="funnel-label">Awareness</div>
+          <div class="funnel-val" style="color:var(--blue-mid);">10,900 views</div>
+          <div class="funnel-sub">New Model + Trend (5%)</div>
+        </div>
+        <div class="funnel-item" style="width:88%;background:var(--green-soft);border:1px solid var(--green-border);">
+          <div class="funnel-label">★ Consideration — ครองสูงสุด</div>
+          <div class="funnel-val" style="color:var(--green);">151,600 views</div>
+          <div class="funnel-sub">FAQ + Product + ท่อ XD-4 (67%)</div>
+        </div>
+        <div class="funnel-item" style="width:68%;background:var(--orange-soft);border:1px solid var(--orange-border);">
+          <div class="funnel-label">Conversion</div>
+          <div class="funnel-val" style="color:var(--orange);">33,800 views</div>
+          <div class="funnel-sub">Promo + Showcase (15%)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ S09 DEEP INSIGHTS ══════ -->
+<div class="section">
+  <div class="section-label">Section 09</div>
+  <div class="section-title">Deep <span>Insights</span></div>
+  <div class="insight-list">
+    <div class="insight-item ins-green"><div class="insight-icon">⏰</div><div class="insight-content"><h4>Timing — ช่วง 18:00–19:00 น. และ 23:00 น. ดีที่สุด</h4><p>คลิปที่ Views สูงสุดทั้งหมดโพสต์ช่วงเย็น–ดึก สอดคล้องกับพฤติกรรม TikTok หลังเลิกงานและก่อนนอน — คลิปกลางวัน 11–14 น. ทำ Views ต่ำกว่า <strong>3–5 เท่า</strong> ในชุดข้อมูลเดียวกัน</p></div></div>
+    <div class="insight-item ins-blue"><div class="insight-icon">🚀</div><div class="insight-content"><h4>Series Momentum — 4 คลิปใน 30 ชั่วโมง สร้าง Algorithm Snowball</h4><p>วันที่ 12–13 พ.ค. ปล่อย 4 คลิป FJ ติดกัน สร้าง Engagement Spike ให้ Algorithm กระจายคลิปถัดไปกว้างขึ้น คลิปที่ 5 (84K views) คือผลของ Momentum ที่สะสมมา <strong>ไม่ใช่แค่ Quality คลิปนั้นเพียงอย่างเดียว</strong></p></div></div>
+    <div class="insight-item ins-orange"><div class="insight-icon">✂️</div><div class="insight-content"><h4>Completion Rate — Promo 7:37 นาที CR เพียง 1.2% = ต้องปรับ</h4><p>คนดูแค่ ~35 วินาทีแล้วออก ควรตัด Promo ให้เหลือ <strong>ไม่เกิน 2:30 นาที</strong> และใส่ราคา/ส่วนลดใน 10 วิแรก เพื่อดักคนที่ Intent ซื้อแล้ว</p></div></div>
+    <div class="insight-item ins-purple"><div class="insight-icon">💰</div><div class="insight-content"><h4>Evergreen Content — คลิปปี 2566 ยังติด Top 10 ของ พ.ค. 2569</h4><p>"วาล์วยัน 3 Steps" (347K total views) ยังถูก Search เจอทุกเดือน เป็น <strong>SEO Asset ที่มีมูลค่าสูง</strong> ควรสร้าง Evergreen FAQ 1 คลิป/สัปดาห์ควบคู่กับ Viral Series</p></div></div>
+    <div class="insight-item ins-red"><div class="insight-icon">📌</div><div class="insight-content"><h4>Halo Effect — Viral คลิปเดียว ยก Profile Views +171%</h4><p>เมื่อ FJ Series Viral คนเข้ามาดู Profile มากขึ้น 171% และดึงคลิปเก่าขึ้น Ranking — แนะนำ <strong>Pin คลิปดีๆ ไว้ที่ Profile</strong> และสร้าง Playlist เพื่อรองรับคนที่ Explore ต่อ</p></div></div>
+    <div class="insight-item ins-blue"><div class="insight-icon">✏️</div><div class="insight-content"><h4>Brand Keyword Variant — "หงษ์" vs "หงส์" ควรใส่ทั้งคู่</h4><p>ชื่อแบรนด์พิมพ์ได้สองแบบและทั้งคู่ปรากฏใน Search Keywords จริงๆ ควรใส่ <strong>ทั้ง "หงษ์ทองแก๊ส" และ "หงส์ทองแก๊ส"</strong> ใน Caption ทุกคลิป</p></div></div>
+  </div>
+</div>
+
+<!-- ══════ S10 SUSTAINABILITY ══════ -->
+<div class="section">
+  <div class="section-label">Section 10</div>
+  <div class="section-title">Sustainability <span>Assessment</span></div>
+  <div class="sustain-grid">
+    <div class="sustain-item"><div class="sustain-icon">📺</div><div class="sustain-label">Views ระดับนี้</div><div class="sustain-status st-warn">⚠️ ไม่แน่นอน</div><div class="sustain-note">ขึ้นกับกระแส FJ จะจางลงใน 6–12 เดือน ต้องหา Series ใหม่มาหนุน</div></div>
+    <div class="sustain-item"><div class="sustain-icon">👥</div><div class="sustain-label">Follower Growth</div><div class="sustain-status st-ok">✅ ยั่งยืนกว่า</div><div class="sustain-note">Base โตจาก 21K → 22K Returning Viewers ก็เพิ่มขึ้น</div></div>
+    <div class="sustain-item"><div class="sustain-icon">🎬</div><div class="sustain-label">Content Formula</div><div class="sustain-status st-ok">✅ ทำซ้ำได้</div><div class="sustain-note">FAQ+ตัวเลข+เดินทางจริง ใช้กับรถรุ่นอื่นได้ทันที</div></div>
+    <div class="sustain-item"><div class="sustain-icon">🔍</div><div class="sustain-label">Evergreen SEO</div><div class="sustain-status st-ok">✅ ยั่งยืน</div><div class="sustain-note">คลิปปี 2566 ยังดึง Traffic ได้ทุกเดือน</div></div>
+  </div>
+</div>
+
+<!-- ══════ S11 SWOT ══════ -->
+<div class="section">
+  <div class="section-label">Section 11</div>
+  <div class="section-title">SWOT <span>Summary</span></div>
+  <div class="swot-grid">
+    <div class="swot-item swot-s"><div class="swot-title">✅ Strengths</div><ul class="swot-list"><li>FJ Series สร้าง Viral Momentum แข็งแกร่ง</li><li>FYP Distribution เพิ่ม +16.6pp</li><li>Audience 80.8% อายุ 25–54 ปี ตรง Target</li><li>Evergreen Content ยังดึง Traffic ต่อเนื่อง</li><li>Series Format + Timing ที่ดี</li></ul></div>
+    <div class="swot-item swot-w"><div class="swot-title">⚠️ Weaknesses</div><ul class="swot-list"><li>8/10 Top Content เป็น FJ — Concentration Risk สูง</li><li>Follow Conversion ~1.5% ต่ำมาก</li><li>Shares ลดลง -13.7%</li><li>Promo Content ยาวเกิน CR 1.2%</li><li>Comment Rate ต่ำ — Engagement น้อย</li></ul></div>
+    <div class="swot-item swot-o"><div class="swot-title">🚀 Opportunities</div><ul class="swot-list"><li>82–94% Non-Followers → CTA เพิ่ม Follower ได้ 2x</li><li>สูตร FAQ ใช้กับ Fortuner, Raptor, HiAce ได้เลย</li><li>Profile Views +171% — Base กำลังสนใจ</li><li>Evergreen Keywords ยังมี Search Demand สูง</li><li>Cross-Platform (YouTube Shorts, Instagram)</li></ul></div>
+    <div class="swot-item swot-t"><div class="swot-title">🛡 Threats</div><ul class="swot-list"><li>กระแส FJ จะจางลงใน 6–12 เดือน</li><li>พึ่ง External Tailwind ~60% ของ Views</li><li>Algorithm เปลี่ยน → FYP ลดได้ทันที</li><li>ยังพึ่ง Organic ทั้งหมด ไม่มี Paid</li></ul></div>
+  </div>
+</div>
+
+<!-- ══════ S12 RECOMMENDATIONS ══════ -->
+<div class="section">
+  <div class="section-label">Section 12</div>
+  <div class="section-title">Strategic <span>Recommendations</span></div>
+
+  <div class="rec-phase">⚡ ระยะสั้น — ทำได้เลยสัปดาห์นี้</div>
+  <div class="rec-grid">
+    <div class="rec-item rec-now"><div class="rec-num">1</div><div class="rec-content"><h4>โพสต์คลิปสำคัญช่วง 18:00–19:00 น. หรือ 23:00 น.</h4><p>เลื่อน Content คุณภาพสูงมาโพสต์ช่วงนี้ หลีกเลี่ยง 11–14 น. สำหรับคลิปที่ต้องการ Reach</p></div></div>
+    <div class="rec-item rec-now"><div class="rec-num">2</div><div class="rec-content"><h4>ใส่ CTA "กด Follow ไว้ไม่พลาดตอนต่อไป" ทุกคลิป</h4><p>ใส่ในช่วง 15–30 วิแรก Follow Conversion ~1.5% → เป้าหมาย 3%+ ได้ไม่ยาก</p></div></div>
+    <div class="rec-item rec-now"><div class="rec-num">3</div><div class="rec-content"><h4>ใส่ทั้ง "หงษ์ทองแก๊ส" และ "หงส์ทองแก๊ส" ใน Caption</h4><p>Cover ทุก Spelling ที่คนค้นหาจริงๆ เพิ่ม Search Discovery โดยไม่ต้องลงทุนเพิ่ม</p></div></div>
+    <div class="rec-item rec-now"><div class="rec-num">4</div><div class="rec-content"><h4>ตัด Promo Content ให้สั้นกว่า 2:30 นาที</h4><p>ใส่ราคา/ส่วนลดใน 10 วิแรก คลิป 7:37 นาที CR 1.2% = เสียโอกาสมาก</p></div></div>
+  </div>
+
+  <div class="rec-phase">📅 ระยะกลาง — 1–2 เดือน</div>
+  <div class="rec-grid">
+    <div class="rec-item rec-mid"><div class="rec-num">5</div><div class="rec-content"><h4>ขยายสูตร FAQ ไปรถรุ่นอื่น</h4><p>"Fortuner/Raptor/HiAce กินกี่บาท/กม.?" — ทดสอบว่า Content Formula ทำงานได้โดยไม่พึ่งกระแส FJ</p></div></div>
+    <div class="rec-item rec-mid"><div class="rec-num">6</div><div class="rec-content"><h4>Evergreen FAQ 1 คลิป/สัปดาห์</h4><p>"ติดแก๊ส LPG ราคาเท่าไหร่ปี 2569", "รถกี่ซีซีติดได้?" — Keywords เหล่านี้ถูกค้นหาตลอดปี</p></div></div>
+    <div class="rec-item rec-mid"><div class="rec-num">7</div><div class="rec-content"><h4>Pin คลิป Top + สร้าง Playlist</h4><p>ให้คนที่ Explore Profile ดูต่อเนื่องได้ง่าย เพิ่ม Watch Time รวมและโอกาส Follow</p></div></div>
+    <div class="rec-item rec-mid"><div class="rec-num">8</div><div class="rec-content"><h4>เพิ่ม Comment Engagement</h4><p>ถามคำถามปลายเปิดในคลิป เช่น "รถคุณรุ่นไหน?" เพื่อเพิ่ม Comment Rate ที่ยังต่ำ</p></div></div>
+  </div>
+
+  <div class="rec-phase">🏛 ระยะยาว — 3+ เดือน (IPO Readiness)</div>
+  <div class="rec-grid">
+    <div class="rec-item rec-long"><div class="rec-num">9</div><div class="rec-content"><h4>Track Marketing ROI เชื่อมกับ Sales</h4><p>บันทึก Lead/Walk-in ที่อ้างว่า "มาจาก TikTok" เพื่อคำนวณ Cost per Lead สำหรับรายงาน IPO</p></div></div>
+    <div class="rec-item rec-long"><div class="rec-num">10</div><div class="rec-content"><h4>Cross-Platform Strategy</h4><p>Repost คลิป Viral บน YouTube Shorts และ Instagram เพื่อ Multi-Platform Presence ที่นักลงทุนมองเห็น</p></div></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <span>TikTok Performance Report · หงษทองแกส · 2026_05_28d</span>
+  <span>จัดทำ 30/05/2569 · TikTok Analytics</span>
+</div>
+
+</div>
+</body>
+</html>
